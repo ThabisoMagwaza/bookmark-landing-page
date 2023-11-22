@@ -79,6 +79,12 @@ const GlobalStyles = createGlobalStyle`
   #root, #__next {
     isolation: isolate;
   }
+
+  /* By Thabiso */
+
+  body {
+    font-family: 'Rubik', sans-serif;
+  }
 `;
 
 export default GlobalStyles;

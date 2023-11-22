@@ -82,8 +82,17 @@ const GlobalStyles = createGlobalStyle`
 
   /* By Thabiso */
 
+  html {
+    --color-soft-blue: hsl(231, 69%, 60%);
+    --color-soft-red: hsl(0, 94%, 66%);
+    
+    --color-grayish-blue: hsl(229, 8%, 60%);
+    --color-very-dark-blue: hsl(229, 31%, 21%);
+  }
+
   body {
     font-family: 'Rubik', sans-serif;
+    font-size: 18px;
   }
 `;
 

@@ -5,6 +5,10 @@ import Image from 'next/image';
 import { COLORS } from '@/lib/constants';
 import UnstyledButton from '../UnstyledButton';
 
+import Heading from '@/components/Heading';
+import Paragraph from '@/components/Paragraph';
+import Button from '@/components/Button';
+
 function Header() {
   return (
     <Wrapper>
@@ -28,9 +32,8 @@ function Header() {
       </Navigation>
 
       <HeroWrapper>
-        <Blob />
-
         <HeroImageWrapper>
+          <Blob />
           <HeroImage
             src="/images/illustration-hero.svg"
             width={657}
@@ -38,30 +41,63 @@ function Header() {
             alt="An illustration of the bookmark tool on a desktop device"
           />
         </HeroImageWrapper>
+
+        <HeroContent>
+          <Heading> A Simple Bookmark Manager</Heading>
+          <Paragraph>
+            A clean and simple interface to organize your favourite websites.
+            Open a new browser tab and see your sites load instantly. Try it for
+            free.
+          </Paragraph>
+
+          <ButtonsWrapper>
+            <Button>Get it in Chrome</Button>
+
+            <Button variant="secondary">Get it in Firefox</Button>
+          </ButtonsWrapper>
+        </HeroContent>
       </HeroWrapper>
     </Wrapper>
   );
 }
 
+const HeroContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+`;
+
+const ButtonsWrapper = styled.div`
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+`;
+
 const HeroImageWrapper = styled.div`
   height: 250px;
+
+  position: relative;
 `;
 
 const HeroWrapper = styled.div`
-  position: relative;
-  margin: 64px -24px 24px -24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 68px;
+  padding: 24px;
+  margin: 64px -24px 0px -24px;
 `;
 
 const Blob = styled.div`
   height: 200px;
-  width: 100%;
+  width: 120%;
 
   border-radius: 1000px;
   background: ${COLORS.SoftBlue};
 
   position: absolute;
   bottom: -10px;
-  right: -25%;
+  right: -35%;
 `;
 
 const HeroImage = styled(Image)`

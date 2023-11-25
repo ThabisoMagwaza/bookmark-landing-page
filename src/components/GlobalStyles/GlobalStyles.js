@@ -87,7 +87,12 @@ const GlobalStyles = createGlobalStyle`
     --color-soft-red: hsl(0, 94%, 66%);
     
     --color-grayish-blue: hsl(229, 8%, 60%);
+    --color-dark-grayish-blue: hsl(229, 8%, 45%);
     --color-very-dark-blue: hsl(229, 31%, 21%);
+
+    --color-white: hsl(0,0%, 100%);
+    --color-offwhite: hsl(229, 2%, 95%);
+    --color-shadow: hsl(229, 31%, 21%, 0.2);
   }
 
   body {

@@ -75,6 +75,7 @@ const ButtonsWrapper = styled.div`
 
 const HeroImageWrapper = styled.div`
   height: 250px;
+  margin: 0 -24px;
 
   position: relative;
 `;
@@ -97,7 +98,7 @@ const Blob = styled.div`
 
   position: absolute;
   bottom: -10px;
-  right: -35%;
+  right: -40%;
 `;
 
 const HeroImage = styled(Image)`

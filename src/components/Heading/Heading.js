@@ -3,8 +3,9 @@ import { COLORS } from '@/lib/constants';
 import styled from 'styled-components';
 
 const SIZES = {
-  1: 32,
-  2: 28,
+  1: 28,
+  2: 24,
+  3: 20,
 };
 
 function Heading({ children, level = 1 }) {

@@ -19,7 +19,7 @@ function FeatureTabs() {
       <TabsContentWrapper
         value="tab1"
         style={{
-          gap: '32px',
+          gap: '64px',
         }}
       >
         <ImageDecorator blobPosition="left">

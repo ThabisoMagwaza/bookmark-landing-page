@@ -6,6 +6,9 @@ function Section({ children, ...delegated }) {
 }
 
 const Wrapper = styled.section`
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
   padding: 24px;
   margin-bottom: 68px;
 

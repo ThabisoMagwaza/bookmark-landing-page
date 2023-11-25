@@ -127,6 +127,8 @@ const Wrapper = styled.header`
   max-width: 1000px;
   margin: 0 auto;
 
+  margin-bottom: 68px;
+
   overflow: hidden;
 `;
 

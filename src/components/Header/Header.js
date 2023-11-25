@@ -8,6 +8,7 @@ import UnstyledButton from '../UnstyledButton';
 import Heading from '@/components/Heading';
 import Paragraph from '@/components/Paragraph';
 import Button from '@/components/Button';
+import ImageDecorator from '../ImageDecorator';
 
 function Header() {
   return (
@@ -32,15 +33,14 @@ function Header() {
       </Navigation>
 
       <HeroWrapper>
-        <HeroImageWrapper>
-          <Blob />
+        <ImageDecorator>
           <HeroImage
             src="/images/illustration-hero.svg"
             width={657}
             height={466}
             alt="An illustration of the bookmark tool on a desktop device"
           />
-        </HeroImageWrapper>
+        </ImageDecorator>
 
         <HeroContent>
           <Heading> A Simple Bookmark Manager</Heading>

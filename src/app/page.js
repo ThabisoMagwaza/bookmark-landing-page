@@ -1,6 +1,3 @@
-'use client';
-import styled from 'styled-components';
-
 import Header from '@/components/Header';
 import Section from '@/components/Section';
 import Heading from '@/components/Heading';

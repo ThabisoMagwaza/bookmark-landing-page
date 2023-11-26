@@ -33,6 +33,7 @@ function Header() {
             src="/images/illustration-hero.svg"
             width={657}
             height={466}
+            priority={true}
             alt="An illustration of the bookmark tool on a desktop device"
           />
         </ImageDecorator>

@@ -45,7 +45,7 @@ function ContactUs() {
       </Header>
 
       <Form onSubmit={onSubmit}>
-        <ErrorWrapper showError={showError}>
+        <ErrorWrapper $showError={showError}>
           <InputWrapper>
             <Input
               required
@@ -79,7 +79,7 @@ const ErrorMessage = styled.p`
 `;
 
 const ErrorWrapper = styled.div`
-  background: ${({ showError }) => (showError && COLORS.SoftRed) || 'revert'};
+  background: ${({ $showError }) => ($showError && COLORS.SoftRed) || 'revert'};
   color: ${COLORS.White};
   padding: 2px;
   border-radius: 5px;

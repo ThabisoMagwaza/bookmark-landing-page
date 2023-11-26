@@ -21,7 +21,7 @@ function ExtensionCard({ title, subtite, logoSrc }) {
       <DotsWrapper>
         <Dots
           src="/images/bg-dots.svg"
-          width={200}
+          width={280}
           height={4}
           alt="decorative dots"
         />
@@ -37,6 +37,7 @@ const DotsWrapper = styled.div`
 
 const Dots = styled(Image)`
   width: 100%;
+  height: auto;
 `;
 
 const Logo = styled(Image)`

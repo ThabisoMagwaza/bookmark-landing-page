@@ -7,4 +7,6 @@ export const COLORS = {
   White: 'var(--color-white)',
   Offwhite: 'var(--color-offwhite)',
   Shadow: 'var(--color-shadow)',
+  LightBorder: 'var(--color-light-border)',
+  TextActive: 'var(--color-text-active)',
 };

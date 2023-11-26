@@ -7,6 +7,7 @@ import Paragraph from '../Paragraph';
 import Button from '../Button';
 import styled from 'styled-components';
 import ImageDecorator from '../ImageDecorator';
+import { COLORS } from '@/lib/constants';
 
 function FeatureTabs() {
   return (
@@ -146,7 +147,7 @@ const TabButton = styled(Tabs.Trigger)`
   background: transparent;
 
   border: none;
-  border-bottom: 1px solid hsl(229, 8%, 85%);
+  border-bottom: 1px solid ${COLORS.LightBorder};
 
   border-left: none;
   border-right: none;
@@ -158,7 +159,11 @@ const TabButton = styled(Tabs.Trigger)`
   padding: 18px;
 
   &:first-child {
-    border-top: 1px solid hsl(229, 8%, 85%);
+    border-top: 1px solid ${COLORS.LightBorder};
+  }
+
+  &[aria-selected='true'] {
+    color: ${COLORS.TextActive};
   }
 
   &[aria-selected='true']::after {
@@ -175,7 +180,7 @@ const TabButton = styled(Tabs.Trigger)`
     margin-left: auto;
     margin-right: auto;
 
-    background: orangered;
+    background: ${COLORS.SoftRed};
   }
 `;
 

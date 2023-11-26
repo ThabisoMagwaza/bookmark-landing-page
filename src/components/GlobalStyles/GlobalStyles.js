@@ -93,6 +93,9 @@ const GlobalStyles = createGlobalStyle`
     --color-white: hsl(0,0%, 100%);
     --color-offwhite: hsl(229, 2%, 95%);
     --color-shadow: hsl(229, 31%, 21%, 0.2);
+    
+    --color-light-border: hsl(229, 8%, 85%);
+    --color-text-active: hsl(229, 8%, 40%);
   }
 
   body {

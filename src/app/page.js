@@ -4,6 +4,7 @@ import Heading from '@/components/Heading';
 import Paragraph from '@/components/Paragraph';
 import FeatureTabs from '@/components/FeatureTabs';
 import ExtensionCards from '@/components/ExtensionCards';
+import FAQs from '@/components/FAQs';
 
 export default function Home() {
   return (
@@ -27,6 +28,15 @@ export default function Home() {
           </Paragraph>
 
           <ExtensionCards />
+        </Section>
+        <Section>
+          <Heading>Frequently Asked Questons</Heading>
+          <Paragraph>
+            Here are some of our FAQs. If you have any other questions you’d
+            like answered please feel free to email us.
+          </Paragraph>
+
+          <FAQs />
         </Section>
       </main>
     </>

@@ -8,12 +8,13 @@ const SIZES = {
   3: 20,
 };
 
-function Heading({ children, level = 1 }) {
+function Heading({ children, level = 1, color = `${COLORS.VeryDarkBlue}` }) {
   return (
     <HeadingStyled
       as={`h${level}`}
       style={{
         '--font-size': `${SIZES[level] / 16}rem`,
+        '--color': color,
       }}
     >
       {children}
@@ -24,7 +25,7 @@ function Heading({ children, level = 1 }) {
 const HeadingStyled = styled.h1`
   font-size: var(--font-size);
   font-weight: 700;
-  color: ${COLORS.VeryDarkBlue};
+  color: var(--color);
 `;
 
 export default Heading;

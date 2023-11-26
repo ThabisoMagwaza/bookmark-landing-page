@@ -5,6 +5,7 @@ import Paragraph from '@/components/Paragraph';
 import FeatureTabs from '@/components/FeatureTabs';
 import ExtensionCards from '@/components/ExtensionCards';
 import FAQs from '@/components/FAQs';
+import ContactUs from '@/components/ContactUs';
 
 export default function Home() {
   return (
@@ -38,6 +39,7 @@ export default function Home() {
 
           <FAQs />
         </Section>
+        <ContactUs />
       </main>
     </>
   );

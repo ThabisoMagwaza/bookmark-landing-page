@@ -13,6 +13,11 @@ const VARIANTS = {
     '--text-color': COLORS.DarkGrayishBlue,
     '--shadow': `0px 5px 20px ${COLORS.Shadow}`,
   },
+  tertiary: {
+    '--background': COLORS.SoftRed,
+    '--text-color': COLORS.White,
+    '--shadow': 'none',
+  },
 };
 
 function Button({ children, variant = 'primary', ...delegated }) {

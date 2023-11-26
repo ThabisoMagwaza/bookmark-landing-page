@@ -87,6 +87,8 @@ const Content = styled(Accordion.Content)`
   font-size: 1rem;
   color: ${COLORS.GrayishBlue};
 
+  border-bottom: 1px solid ${COLORS.LightBorder};
+
   padding: 16px 0;
 `;
 
@@ -106,8 +108,13 @@ const Trigger = styled(Accordion.Trigger)`
   padding: 18px 0;
 
   border: none;
-  border-bottom: 1px solid ${COLORS.LightBorder};
   background: transparent;
+
+  outline-offset: 5px;
+
+  &[data-state='closed'] {
+    border-bottom: 1px solid ${COLORS.LightBorder};
+  }
 
   &[data-state='open'] {
     color: ${COLORS.SoftRed};

@@ -2,26 +2,21 @@
 import styled from 'styled-components';
 import Image from 'next/image';
 
-import { COLORS } from '@/lib/constants';
 import UnstyledButton from '../UnstyledButton';
 
 import Heading from '@/components/Heading';
 import Paragraph from '@/components/Paragraph';
 import Button from '@/components/Button';
+import { COLORS } from '@/lib/constants';
+
 import ImageDecorator from '../ImageDecorator';
+import Logo from '../Logo';
 
 function Header() {
   return (
     <Wrapper>
       <Navigation>
-        <Logo
-          width={128}
-          height={25}
-          src="/images/logo-bookmark.svg"
-          alt="bookmark logo"
-          priority={true}
-        />
-
+        <Logo />
         <HamburgerButton onClick={() => console.log('show menu')}>
           <HamburgerIcon
             width={18}
@@ -89,18 +84,6 @@ const HeroWrapper = styled.div`
   margin: 64px -24px 0px -24px;
 `;
 
-const Blob = styled.div`
-  height: 200px;
-  width: 120%;
-
-  border-radius: 1000px;
-  background: ${COLORS.SoftBlue};
-
-  position: absolute;
-  bottom: -10px;
-  right: -40%;
-`;
-
 const HeroImage = styled(Image)`
   display: block;
   object-fit: fill;
@@ -113,9 +96,8 @@ const HeroImage = styled(Image)`
 const Navigation = styled.div`
   display: flex;
   justify-content: space-between;
+  color: ${COLORS.VeryDarkBlue};
 `;
-
-const Logo = styled(Image)``;
 
 const HamburgerIcon = styled(Image)`
   pointer-events: none;

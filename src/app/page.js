@@ -6,6 +6,7 @@ import FeatureTabs from '@/components/FeatureTabs';
 import ExtensionCards from '@/components/ExtensionCards';
 import FAQs from '@/components/FAQs';
 import ContactUs from '@/components/ContactUs';
+import Footer from '@/components/Footer';
 
 export default function Home() {
   return (
@@ -41,6 +42,7 @@ export default function Home() {
         </Section>
         <ContactUs />
       </main>
+      <Footer />
     </>
   );
 }

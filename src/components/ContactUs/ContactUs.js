@@ -65,7 +65,7 @@ function ContactUs() {
             )}
           </InputWrapper>
           {touched && hasError && (
-            <ErrorMessage>Whoops, make sure it's an email</ErrorMessage>
+            <ErrorMessage>Whoops, make sure it&apos;s an email</ErrorMessage>
           )}
         </ErrorWrapper>
         <Button variant="tertiary">Contact Us</Button>

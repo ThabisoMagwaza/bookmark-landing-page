@@ -8,7 +8,7 @@ import { COLORS } from '@/lib/constants';
 import Heading from '../Heading';
 import Button from '../Button';
 
-const EmailRegex = new RegExp('^[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}$', 'i');
+const EmailRegex = new RegExp('^[^\\s@]+@[^\\s@]+\\.[^\\s@]{2,}$');
 
 function ContactUs() {
   const [email, setEmail] = React.useState('');
@@ -65,7 +65,7 @@ function ContactUs() {
             )}
           </InputWrapper>
           {touched && hasError && (
-            <ErrorMessage>Something went wrong</ErrorMessage>
+            <ErrorMessage>Whoops, make sure it's an email</ErrorMessage>
           )}
         </ErrorWrapper>
         <Button variant="tertiary">Contact Us</Button>

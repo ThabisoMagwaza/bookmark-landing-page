@@ -11,20 +11,23 @@ import { COLORS } from '@/lib/constants';
 
 import ImageDecorator from '../ImageDecorator';
 import Logo from '../Logo';
+import HamburgerMenu from '../HamburgerMenu';
 
 function Header() {
   return (
     <Wrapper>
       <Navigation>
         <Logo />
-        <HamburgerButton onClick={() => console.log('show menu')}>
-          <HamburgerIcon
-            width={18}
-            height={15}
-            src="/images/icon-hamburger.svg"
-            alt="menu button icon"
-          />
-        </HamburgerButton>
+        <HamburgerMenu>
+          <HamburgerButton>
+            <HamburgerIcon
+              width={18}
+              height={15}
+              src="/images/icon-hamburger.svg"
+              alt="menu button icon"
+            />
+          </HamburgerButton>
+        </HamburgerMenu>
       </Navigation>
 
       <HeroWrapper>

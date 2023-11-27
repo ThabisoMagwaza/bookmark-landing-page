@@ -1,13 +1,14 @@
 'use client';
-import styled from 'styled-components';
+import Link from 'next/link';
 import Image from 'next/image';
+import styled from 'styled-components';
 
 import UnstyledButton from '../UnstyledButton';
 
 import Heading from '@/components/Heading';
 import Paragraph from '@/components/Paragraph';
 import Button from '@/components/Button';
-import { COLORS } from '@/lib/constants';
+import { COLORS, QUERIES } from '@/lib/constants';
 
 import ImageDecorator from '../ImageDecorator';
 import Logo from '../Logo';
@@ -28,6 +29,21 @@ function Header() {
             />
           </HamburgerButton>
         </HamburgerMenu>
+
+        <DesktopNavWrapper>
+          <DestktopNav>
+            <li>
+              <DesktopNavLink href="/">Features</DesktopNavLink>
+            </li>
+            <li>
+              <DesktopNavLink href="/">Pricing</DesktopNavLink>
+            </li>
+            <li>
+              <DesktopNavLink href="/">Contact</DesktopNavLink>
+            </li>
+          </DestktopNav>
+          <Button variant="tertiary">Login</Button>
+        </DesktopNavWrapper>
       </Navigation>
 
       <HeroWrapper>
@@ -60,6 +76,33 @@ function Header() {
   );
 }
 
+const DesktopNavLink = styled(Link)`
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 10px 16px;
+
+  color: ${COLORS.VeryDarkBlue};
+
+  display: block;
+`;
+
+const DesktopNavWrapper = styled.div`
+  align-items: baseline;
+  gap: 10px;
+  display: none;
+
+  @media ${QUERIES.phoneAndLarger} {
+    display: flex;
+  }
+`;
+
+const DestktopNav = styled.div`
+  list-style: none;
+  display: flex;
+
+  align-items: baseline;
+`;
+
 const HeroContent = styled.div`
   display: flex;
   flex-direction: column;
@@ -70,13 +113,6 @@ const ButtonsWrapper = styled.div`
   display: flex;
   gap: 12px;
   justify-content: center;
-`;
-
-const HeroImageWrapper = styled.div`
-  height: 250px;
-  margin: 0 -24px;
-
-  position: relative;
 `;
 
 const HeroWrapper = styled.div`
@@ -101,6 +137,8 @@ const Navigation = styled.div`
   display: flex;
   justify-content: space-between;
   color: ${COLORS.VeryDarkBlue};
+
+  align-items: center;
 `;
 
 const HamburgerIcon = styled(Image)`
@@ -123,6 +161,10 @@ const HamburgerButton = styled(UnstyledButton)`
   margin: -16px;
 
   cursor: pointer;
+
+  @media ${QUERIES.phoneAndLarger} {
+    display: none;
+  }
 `;
 
 export default Header;

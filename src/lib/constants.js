@@ -10,3 +10,15 @@ export const COLORS = {
   LightBorder: 'var(--color-light-border)',
   TextActive: 'var(--color-text-active)',
 };
+
+const BREAKPOINTS = {
+  phone: 600,
+  tablet: 950,
+  laptop: 1300,
+};
+
+export const QUERIES = {
+  phoneAndLarger: `(min-width: ${BREAKPOINTS.phone / 16}rem)`,
+  tableAndLarger: `(min-width: ${BREAKPOINTS.tablet / 16}rem)`,
+  laptopAndLarger: `(min-width: ${BREAKPOINTS.laptop / 16}rem)`,
+};

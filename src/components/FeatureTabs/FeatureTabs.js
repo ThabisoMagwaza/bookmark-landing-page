@@ -6,7 +6,6 @@ import Heading from '../Heading';
 import Paragraph from '../Paragraph';
 import Button from '../Button';
 import styled from 'styled-components';
-import ImageDecorator from '../ImageDecorator';
 import { COLORS, QUERIES } from '@/lib/constants';
 
 function FeatureTabs() {
@@ -23,17 +22,6 @@ function FeatureTabs() {
           gap: '64px',
         }}
       >
-        {/* <ImageDecorator blobPosition="left">
-          <ImageWrapper>
-            <ImageStyled
-              src="/images/illustration-features-tab-1.svg"
-              width={563}
-              height={436}
-              alt="An illustration of the bookmark tool on a desktop device"
-            />
-          </ImageWrapper>
-        </ImageDecorator> */}
-
         <Content>
           <Heading level={2}>Bookmark in one click</Heading>
           <Paragraph>
@@ -51,16 +39,6 @@ function FeatureTabs() {
           gap: '120px',
         }}
       >
-        <ImageDecorator blobPosition="left" blobOffset={80}>
-          <ImageWrapper>
-            <ImageStyled
-              src="/images/illustration-features-tab-2.svg"
-              width={478}
-              height={416}
-              alt="An illustration of the bookmark tool on a desktop device"
-            />
-          </ImageWrapper>
-        </ImageDecorator>
         <Content>
           <Heading level={2}>Intelligent search</Heading>
           <Paragraph>
@@ -76,16 +54,6 @@ function FeatureTabs() {
           gap: '120px',
         }}
       >
-        <ImageDecorator blobPosition="left" blobOffset={85}>
-          <ImageWrapper>
-            <ImageStyled
-              src="/images/illustration-features-tab-3.svg"
-              width={440}
-              height={380}
-              alt="An illustration of the bookmark tool on a desktop device"
-            />
-          </ImageWrapper>
-        </ImageDecorator>
         <Content>
           <Heading level={2}>Share your bookmarks</Heading>
           <Paragraph>
@@ -99,36 +67,43 @@ function FeatureTabs() {
   );
 }
 
+const Blob = styled.div`
+  width: 70%;
+  height: 70%;
+  background: ${COLORS.SoftBlue};
+
+  border-radius: 0 1000px 1000px 0;
+
+  position: absolute;
+  right: left;
+  bottom: 0;
+`;
+
+const HeroImage = styled(Image)`
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+
+  position: relative;
+`;
+
 const InfoButton = styled(Button)`
   align-self: center;
 `;
 
 const TabsContentWrapper = styled(Tabs.TabsContent)`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+  justify-content: center;
 `;
 
 const Content = styled.div`
   display: flex;
   flex-direction: column;
+  align-self: center;
   gap: 16px;
-`;
-
-const ImageWrapper = styled.div`
-  padding: 24px;
-  overflow: hidden;
-  border-radius: 5px;
-`;
-
-const ImageStyled = styled(Image)`
-  display: block;
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
-
-  max-width: 500px;
-
-  position: relative;
 `;
 
 const TabsRoot = styled(Tabs.Root)`
@@ -136,7 +111,8 @@ const TabsRoot = styled(Tabs.Root)`
   flex-direction: column;
   margin-top: 32px;
 
-  /* align-items: center; */
+  max-width: 1144px;
+  margin: 0 auto;
 `;
 
 const TabsList = styled(Tabs.List)`

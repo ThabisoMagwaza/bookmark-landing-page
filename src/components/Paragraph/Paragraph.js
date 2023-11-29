@@ -8,6 +8,8 @@ function Paragraph({ children }) {
 
 const ParagraphStyled = styled.p`
   color: ${COLORS.GrayishBlue};
+  max-width: 500px;
+  align-self: center;
 `;
 
 export default Paragraph;

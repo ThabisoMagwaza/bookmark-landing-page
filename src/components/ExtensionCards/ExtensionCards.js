@@ -1,6 +1,7 @@
 'use client';
 import styled from 'styled-components';
 import ExtensionCard from '../ExtensionCard';
+import { QUERIES } from '@/lib/constants';
 
 function ExtensionCards() {
   return (
@@ -28,6 +29,11 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
+
+  @media ${QUERIES.phoneAndLarger} {
+    flex-direction: revert;
+    justify-content: center;
+  }
 `;
 
 export default ExtensionCards;

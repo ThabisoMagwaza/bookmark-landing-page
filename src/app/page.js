@@ -1,3 +1,4 @@
+'use client';
 import Header from '@/components/Header';
 import Section from '@/components/Section';
 import Heading from '@/components/Heading';
@@ -7,6 +8,7 @@ import ExtensionCards from '@/components/ExtensionCards';
 import FAQs from '@/components/FAQs';
 import ContactUs from '@/components/ContactUs';
 import Footer from '@/components/Footer';
+import styled from 'styled-components';
 
 export default function Home() {
   return (
@@ -31,18 +33,24 @@ export default function Home() {
 
           <ExtensionCards />
         </Section>
-        <Section>
-          <Heading>Frequently Asked Questons</Heading>
+        <FAQSection>
+          <Heading level={2}>Frequently Asked Questons</Heading>
           <Paragraph>
             Here are some of our FAQs. If you have any other questions you’d
             like answered please feel free to email us.
           </Paragraph>
 
           <FAQs />
-        </Section>
+        </FAQSection>
         <ContactUs />
       </main>
       <Footer />
     </>
   );
 }
+
+const FAQSection = styled(Section)`
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+`;

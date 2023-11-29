@@ -7,7 +7,7 @@ import Paragraph from '../Paragraph';
 import Button from '../Button';
 import styled from 'styled-components';
 import ImageDecorator from '../ImageDecorator';
-import { COLORS } from '@/lib/constants';
+import { COLORS, QUERIES } from '@/lib/constants';
 
 function FeatureTabs() {
   return (
@@ -23,7 +23,7 @@ function FeatureTabs() {
           gap: '64px',
         }}
       >
-        <ImageDecorator blobPosition="left">
+        {/* <ImageDecorator blobPosition="left">
           <ImageWrapper>
             <ImageStyled
               src="/images/illustration-features-tab-1.svg"
@@ -32,7 +32,7 @@ function FeatureTabs() {
               alt="An illustration of the bookmark tool on a desktop device"
             />
           </ImageWrapper>
-        </ImageDecorator>
+        </ImageDecorator> */}
 
         <Content>
           <Heading level={2}>Bookmark in one click</Heading>
@@ -126,6 +126,8 @@ const ImageStyled = styled(Image)`
   width: 100%;
   height: 100%;
 
+  max-width: 500px;
+
   position: relative;
 `;
 
@@ -133,13 +135,21 @@ const TabsRoot = styled(Tabs.Root)`
   display: flex;
   flex-direction: column;
   margin-top: 32px;
+
+  /* align-items: center; */
 `;
 
 const TabsList = styled(Tabs.List)`
   display: flex;
   flex-direction: column;
 
+  align-self: center;
+
   margin-bottom: 48px;
+
+  @media ${QUERIES.phoneAndLarger} {
+    flex-direction: revert;
+  }
 `;
 
 const TabButton = styled(Tabs.Trigger)`
@@ -156,7 +166,7 @@ const TabButton = styled(Tabs.Trigger)`
   color: hsl(229, 8%, 55%);
   font-weight: 500;
 
-  padding: 18px;
+  padding: 18px 48px;
 
   &:first-child {
     border-top: 1px solid ${COLORS.LightBorder};
@@ -181,6 +191,12 @@ const TabButton = styled(Tabs.Trigger)`
     margin-right: auto;
 
     background: ${COLORS.SoftRed};
+  }
+
+  @media ${QUERIES.phoneAndLarger} {
+    &:first-child {
+      border-top: none;
+    }
   }
 `;
 

@@ -68,11 +68,15 @@ function ContactUs() {
             <ErrorMessage>Whoops, make sure it&apos;s an email</ErrorMessage>
           )}
         </ErrorWrapper>
-        <Button variant="tertiary">Contact Us</Button>
+        <SubmitButton variant="tertiary">Contact Us</SubmitButton>
       </Form>
     </Wrapper>
   );
 }
+
+const SubmitButton = styled(Button)`
+  flex-basis: 150px;
+`;
 
 const ErrorMessage = styled.p`
   margin: 5px 16px;
@@ -92,6 +96,8 @@ const ErrorWrapper = styled.div`
 
 const InputWrapper = styled.div`
   position: relative;
+  flex-basis: 600px;
+  flex-grow: 1;
 `;
 
 const ErrorIcon = styled(Image)`
@@ -130,7 +136,11 @@ const Subtitle = styled.p`
 
 const Form = styled.form`
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  align-items: flex-start;
+
   gap: 16px;
 `;
 

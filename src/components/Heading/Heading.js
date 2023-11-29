@@ -3,12 +3,17 @@ import { COLORS } from '@/lib/constants';
 import styled from 'styled-components';
 
 const SIZES = {
-  1: 28,
+  1: 38,
   2: 24,
   3: 20,
 };
 
-function Heading({ children, level = 1, color = `${COLORS.VeryDarkBlue}` }) {
+function Heading({
+  children,
+  level = 1,
+  color = `${COLORS.VeryDarkBlue}`,
+  style,
+}) {
   return (
     <HeadingStyled
       as={`h${level}`}
@@ -24,7 +29,8 @@ function Heading({ children, level = 1, color = `${COLORS.VeryDarkBlue}` }) {
 
 const HeadingStyled = styled.h1`
   font-size: var(--font-size);
-  font-weight: 700;
+  font-weight: 600;
+  line-height: 1.1;
   color: var(--color);
 `;
 

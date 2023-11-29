@@ -13,6 +13,7 @@ import { COLORS, QUERIES } from '@/lib/constants';
 import ImageDecorator from '../ImageDecorator';
 import Logo from '../Logo';
 import HamburgerMenu from '../HamburgerMenu';
+import Heading1 from '../Heading1';
 
 function Header() {
   return (
@@ -47,7 +48,8 @@ function Header() {
       </Navigation>
 
       <HeroWrapper>
-        <ImageDecorator>
+        <HeroImageWrapper>
+          <Blob />
           <HeroImage
             src="/images/illustration-hero.svg"
             width={657}
@@ -55,10 +57,10 @@ function Header() {
             priority={true}
             alt="An illustration of the bookmark tool on a desktop device"
           />
-        </ImageDecorator>
+        </HeroImageWrapper>
 
         <HeroContent>
-          <Heading> A Simple Bookmark Manager</Heading>
+          <Heading1> A Simple Bookmark Manager</Heading1>
           <Paragraph>
             A clean and simple interface to organize your favourite websites.
             Open a new browser tab and see your sites load instantly. Try it for
@@ -76,6 +78,74 @@ function Header() {
   );
 }
 
+const Blob = styled.div`
+  width: 70%;
+  height: 70%;
+  background: ${COLORS.SoftBlue};
+
+  border-radius: 1000px 0 0 1000px;
+
+  position: absolute;
+  right: 0;
+  bottom: 0;
+`;
+
+const HeroImageWrapper = styled.div`
+  position: relative;
+  margin: 0 -24px;
+
+  @media ${QUERIES.phoneAndLarger} {
+    flex: 1;
+    align-self: flex-start;
+  }
+`;
+
+const HeroContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+
+  max-width: 400px;
+
+  @media ${QUERIES.phoneAndLarger} {
+    max-width: 500px;
+
+    text-align: start;
+    flex: 1;
+    flex-shrink: 1000;
+  }
+`;
+
+const HeroImage = styled(Image)`
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+
+  position: relative;
+`;
+
+const HeroWrapper = styled.div`
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 32px;
+
+  padding: 24px;
+  padding-top: 0;
+
+  margin: 64px -24px 0px -24px;
+
+  @media ${QUERIES.phoneAndLarger} {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+
+    margin: 64px -68px 0px -24px;
+    gap: 28px;
+  }
+`;
+
 const DesktopNavLink = styled(Link)`
   text-decoration: none;
   text-transform: uppercase;
@@ -90,6 +160,7 @@ const DesktopNavWrapper = styled.div`
   align-items: baseline;
   gap: 10px;
   display: none;
+  font-size: 1rem;
 
   @media ${QUERIES.phoneAndLarger} {
     display: flex;
@@ -103,34 +174,14 @@ const DestktopNav = styled.div`
   align-items: baseline;
 `;
 
-const HeroContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-`;
-
 const ButtonsWrapper = styled.div`
   display: flex;
   gap: 12px;
   justify-content: center;
-`;
 
-const HeroWrapper = styled.div`
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  gap: 68px;
-  padding: 24px;
-  margin: 64px -24px 0px -24px;
-`;
-
-const HeroImage = styled(Image)`
-  display: block;
-  object-fit: fill;
-  width: 100%;
-  height: 100%;
-
-  position: relative;
+  @media ${QUERIES.phoneAndLarger} {
+    justify-content: revert;
+  }
 `;
 
 const Navigation = styled.div`
@@ -148,12 +199,10 @@ const HamburgerIcon = styled(Image)`
 const Wrapper = styled.header`
   padding: 24px;
 
-  max-width: 1000px;
+  max-width: 1144px;
   margin: 0 auto;
 
   margin-bottom: 68px;
-
-  overflow: hidden;
 `;
 
 const HamburgerButton = styled(UnstyledButton)`

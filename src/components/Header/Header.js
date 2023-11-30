@@ -4,20 +4,19 @@ import Image from 'next/image';
 import styled from 'styled-components';
 
 import UnstyledButton from '../UnstyledButton';
-
-import Heading from '@/components/Heading';
 import Paragraph from '@/components/Paragraph';
 import Button from '@/components/Button';
 import { COLORS, QUERIES } from '@/lib/constants';
 
-import ImageDecorator from '../ImageDecorator';
 import Logo from '../Logo';
 import HamburgerMenu from '../HamburgerMenu';
 import Heading1 from '../Heading1';
+import MaxWidthWrapper from '../MaxWidthWrapper';
 
 function Header() {
   return (
     <Wrapper>
+      <BlobDesktop />
       <Navigation>
         <Logo />
         <HamburgerMenu>
@@ -49,7 +48,6 @@ function Header() {
 
       <HeroWrapper>
         <HeroImageWrapper>
-          <Blob />
           <HeroImage
             src="/images/illustration-hero.svg"
             width={657}
@@ -78,41 +76,74 @@ function Header() {
   );
 }
 
-const Blob = styled.div`
-  width: 70%;
-  height: 70%;
+const Wrapper = styled.header`
+  margin-bottom: 68px;
+
+  position: relative;
+  overflow: hidden;
+`;
+
+const BlobDesktop = styled.div`
+  height: clamp(100px, 45vw, 320px);
   background: ${COLORS.SoftBlue};
 
   border-radius: 1000px 0 0 1000px;
 
   position: absolute;
+  width: 80%;
   right: 0;
-  bottom: 0;
+  top: 27%;
+
+  @media ${QUERIES.phoneAndLarger} {
+    width: 70%;
+  }
+
+  @media ${QUERIES.tableAndLarger} {
+    width: 40%;
+    height: 320px;
+    bottom: 0;
+    top: revert;
+  }
+`;
+
+const HeroWrapper = styled(MaxWidthWrapper)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media ${QUERIES.tableAndLarger} {
+    flex-direction: row-reverse;
+    align-items: center;
+  }
 `;
 
 const HeroImageWrapper = styled.div`
   position: relative;
   margin: 0 -24px;
+  margin-bottom: 64px;
 
-  @media ${QUERIES.phoneAndLarger} {
-    flex: 1;
-    align-self: flex-start;
+  max-width: 600px;
+  flex-shrink: 10000;
+
+  @media ${QUERIES.tableAndLarger} {
+    margin: revert;
+    margin-right: -120px;
   }
 `;
 
 const HeroContent = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
   gap: 28px;
 
   max-width: 400px;
 
-  @media ${QUERIES.phoneAndLarger} {
+  @media ${QUERIES.tableAndLarger} {
     max-width: 500px;
 
     text-align: start;
-    flex: 1;
-    flex-shrink: 1000;
   }
 `;
 
@@ -122,28 +153,6 @@ const HeroImage = styled(Image)`
   height: 100%;
 
   position: relative;
-`;
-
-const HeroWrapper = styled.div`
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  gap: 32px;
-
-  padding: 24px;
-  padding-top: 0;
-
-  margin: 64px -24px 0px -24px;
-
-  @media ${QUERIES.phoneAndLarger} {
-    flex-direction: row-reverse;
-    justify-content: space-between;
-
-    margin: 64px -68px 0px -24px;
-    gap: 28px;
-  }
 `;
 
 const DesktopNavLink = styled(Link)`
@@ -179,12 +188,13 @@ const ButtonsWrapper = styled.div`
   gap: 12px;
   justify-content: center;
 
-  @media ${QUERIES.phoneAndLarger} {
-    justify-content: revert;
+  @media ${QUERIES.tableAndLarger} {
+    justify-content: start;
+    align-self: flex-start;
   }
 `;
 
-const Navigation = styled.div`
+const Navigation = styled(MaxWidthWrapper)`
   display: flex;
   justify-content: space-between;
   color: ${COLORS.VeryDarkBlue};
@@ -194,15 +204,6 @@ const Navigation = styled.div`
 
 const HamburgerIcon = styled(Image)`
   pointer-events: none;
-`;
-
-const Wrapper = styled.header`
-  padding: 24px;
-
-  max-width: 1144px;
-  margin: 0 auto;
-
-  margin-bottom: 68px;
 `;
 
 const HamburgerButton = styled(UnstyledButton)`

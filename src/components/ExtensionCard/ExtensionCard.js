@@ -64,6 +64,14 @@ const Wrapper = styled.div`
   margin-top: 24px;
 
   box-shadow: 0px 5px 15px ${COLORS.Shadow};
+
+  &:nth-of-type(2) {
+    margin-top: 68px;
+  }
+
+  &:nth-of-type(3) {
+    margin-top: 108px;
+  }
 `;
 
 export default ExtensionCard;

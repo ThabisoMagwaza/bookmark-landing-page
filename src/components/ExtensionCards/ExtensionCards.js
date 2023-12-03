@@ -33,6 +33,7 @@ const Wrapper = styled.div`
   @media ${QUERIES.phoneAndLarger} {
     flex-direction: revert;
     justify-content: center;
+    align-items: flex-start;
   }
 `;
 

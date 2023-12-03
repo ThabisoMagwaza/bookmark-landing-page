@@ -76,6 +76,7 @@ const NavLinks = styled.ul`
   flex-direction: column;
   gap: 32px;
   list-style: none;
+  text-align: center;
 
   @media ${QUERIES.phoneAndLarger} {
     margin-right: auto;

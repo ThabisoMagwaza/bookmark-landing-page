@@ -3,7 +3,7 @@ import React from 'react';
 import Image from 'next/image';
 import styled from 'styled-components';
 
-import { COLORS } from '@/lib/constants';
+import { COLORS, QUERIES } from '@/lib/constants';
 
 import Heading from '../Heading';
 import Button from '../Button';
@@ -76,12 +76,12 @@ function ContactUs() {
 
 const SubmitButton = styled(Button)`
   flex-basis: 150px;
-`;
+  flex-grow: 1;
 
-const ErrorMessage = styled.p`
-  margin: 5px 16px;
+  @media ${QUERIES.tableAndLarger} {
+    flex-grow: revert;
+  }
 `;
-
 const ErrorWrapper = styled.div`
   background: ${({ $showError }) => ($showError && COLORS.SoftRed) || 'revert'};
   color: ${COLORS.White};
@@ -92,12 +92,22 @@ const ErrorWrapper = styled.div`
   font-weight: 700;
   font-style: italic;
   text-align: start;
+
+  flex-basis: 300px;
+  flex-grow: 1;
+
+  @media ${QUERIES.tableAndLarger} {
+    flex-grow: revert;
+  }
+`;
+
+const ErrorMessage = styled.p`
+  margin: 5px 16px;
 `;
 
 const InputWrapper = styled.div`
   position: relative;
-  flex-basis: 600px;
-  flex-grow: 1;
+  width: 100%;
 `;
 
 const ErrorIcon = styled(Image)`
@@ -132,14 +142,16 @@ const Header = styled.header`
 
 const Subtitle = styled.p`
   text-transform: uppercase;
+
+  margin-bottom: 24px;
+  font-size: ${14 / 16}rem;
+  letter-spacing: 4px;
 `;
 
 const Form = styled.form`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-
-  align-items: flex-start;
 
   gap: 16px;
 `;

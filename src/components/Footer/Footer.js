@@ -69,6 +69,10 @@ const NavLink = styled(Link)`
   text-decoration: none;
   color: ${COLORS.White};
   text-transform: uppercase;
+
+  &:hover {
+    color: ${COLORS.SoftRed};
+  }
 `;
 
 const NavLinks = styled.ul`
@@ -77,10 +81,6 @@ const NavLinks = styled.ul`
   gap: 32px;
   list-style: none;
   text-align: center;
-
-  &:hover {
-    color: ${COLORS.SoftRed};
-  }
 
   @media ${QUERIES.phoneAndLarger} {
     margin-right: auto;

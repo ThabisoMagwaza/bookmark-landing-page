@@ -201,6 +201,12 @@ const TabButton = styled(Tabs.Trigger)`
 
   padding: 18px 48px;
 
+  cursor: pointer;
+
+  &:hover {
+    color: ${COLORS.SoftRed};
+  }
+
   &:first-child {
     border-top: 1px solid ${COLORS.LightBorder};
   }

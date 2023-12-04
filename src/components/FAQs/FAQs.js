@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import * as Accordion from '@radix-ui/react-accordion';
 import { COLORS } from '@/lib/constants';
+
 import Chevron from '../Chevron';
 import Button from '../Button';
 
@@ -79,7 +80,7 @@ const Wrapper = styled(Accordion.Root)`
 `;
 
 const Heading = styled.h4`
-  color: ${COLORS.VeryDarkBlue};
+  /* color: ${COLORS.VeryDarkBlue}; */
 `;
 
 const Content = styled(Accordion.Content)`
@@ -111,6 +112,16 @@ const Trigger = styled(Accordion.Trigger)`
   background: transparent;
 
   outline-offset: 5px;
+
+  cursor: pointer;
+
+  & > h4 {
+    color: ${COLORS.VeryDarkBlue};
+  }
+
+  &:hover > h4 {
+    color: ${COLORS.SoftRed};
+  }
 
   &[data-state='closed'] {
     border-bottom: 1px solid ${COLORS.LightBorder};

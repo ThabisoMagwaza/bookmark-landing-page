@@ -163,6 +163,10 @@ const DesktopNavLink = styled(Link)`
   color: ${COLORS.VeryDarkBlue};
 
   display: block;
+
+  &:hover {
+    color: ${COLORS.SoftRed};
+  }
 `;
 
 const DesktopNavWrapper = styled.div`

@@ -78,6 +78,10 @@ const NavLinks = styled.ul`
   list-style: none;
   text-align: center;
 
+  &:hover {
+    color: ${COLORS.SoftRed};
+  }
+
   @media ${QUERIES.phoneAndLarger} {
     margin-right: auto;
     flex-direction: row;
